@@ -1,4 +1,68 @@
 [2016-01-26] Adjust the system partition & merge partitions of Mi3TD; Support the 64G version; Support the official OTA
+This Post Is Originally Made By Xuefer and QuestionYu. And All Credits Are Going To Them.
+
+What is this?
+This is a course that guides you adjust the system partition and merge partitions of your Mi3TD. It supports the both 16G version and 64G version! And the 64G version will be more alacrity.
+
+Sometimes when you want to install more Apps and the internal storage is enough but it tells you there is no enough space to install. If you ever met this occasionally, you should learn to merge partitions.
+
+Sometimes when you want to flash Gapps, but failed with lack of enough space in system partition. Or you want to prepare for the CM13 (Android 6.0) in the future. Then you should learn to adjust the size of the system partition.
+
+Maybe you have read these posts http://www.miui.com/thread-2197660-1-1.html , http://www.miui.com/thread-2415537-1-1.html and http://www.miui.com/thread-2880002-1-1.html. And the last one is thought of the official merging partitions, and some people may don’t believe it is official. But personally, it is official indeed and the official has provided those files they mentioned. However, the official merging have a bug that your Mi3 will lose one Gigabyte and only left 12.25G after you merge partitions. Fortunately, this course fix that bug perfectly, and make use of all of your storage, you won’t  lose any Gigabytes. (If you are lucky enough, your data will be well-preserved. )
+
+This is the effect picture after merge partitions. What’s more, you can use the official system update (OTA) normally after the merging: ) I have tested in person that the OTA is normal and the storage won’t lose after starting up.
+And the bug of the storage count error is repaired. Emphasize one more time, this is the effect picture of my Mi3 and both 16G and 64G version is effective.
+
+  
+
+Haha, many people still don’t know about the MIUI forum’s catalogue format.
+If you wonder where is the other contents, go to the above and you’ll find it under the title, click to go ahead.
+The purpose is to read in order, and the eyes won’t be confused by looking at too many things.
+
+The do's and don'ts
+Before you start, you are supposed to read throughout this course.
+
+And you are strongly supposed to back up your data!
+Make sure that your device is fully charged or has enough power for this process.
+
+By the way, flash is accompanied with risks. If one wants to get better experience, he should prepare for the failure.
+
+This course is the summary of my personal experience which can’t represent everyone can succeed. If you start, that represent you have prepared for the failure. I'm Not responsible For Any Eventual Errors And Misbehaving Of Your Devices, try at your own risk.
+
+Ready? Come on!
+
+The kernel of this course is provided by @Xuefer. Yes! He is the God among the Mi3TD users. This course is finished under Xuefer’s guidance.
+
+Preparation/Install Drive.
+The toolkit you need: Miflash, Nvflash. (the latter one is the download link of Baidu netdisk).
+
+If you can’t download though the netdisk, you can doenload from this: (provided by Xuefer)
+It’s the the same as the netdisk. Only when you can’t download from the netdisk can you download here!
+nvflash-2016-01-21.zip (20.98 MB)
+nvflash-2016-01-23.zip (20.98 MB)
+
+The Miflash is official and the download link is official too. Nvflash is provided by Xuefer who extract it from the toolkit of official MIUI ROM Fastboot file (Mi3TD is not without merging partitions, it just hides in the Fastboot file), but it solves the official bug indeed.
+
+My computer is Windows 10 Pro, and it opens the drive signature by default. But the deep flashing drive provided by NVIDIA (XiaoMi) is without signature, which causes a shitty problem: the Windows don’t allow to install.
+I don’t advise to use older versions of Windows such as Windows XP, which can’t install MTP drive automatically and the MTP drive is hard to install in Windows XP. I advise to use Windows 7 or higher systems.
+
+The method to close Windows 10 drive signature is following:
+
+Startup – Settings – Update & security – Recovery – Advanced startup – Restart now – Troubleshoot – Advanced options – Startup Settings – Restart – 7（Disable driver signature）
+If you can’t understand, you can find more detailed courses in Google. (Windows 7/8/8.1 pls Google by yourself~)
+
+Before you proceed, pls exit all the PC Managers entirely, such as safe software, 360 and so on. The less apps stay in background, the better. The purpose is making sure the drive can be install normally!
+If you don’t exit entirely, it may cause the failure later.
+
+Firstly, install Miflash~ keep default, don’t change the installation path~ If you meet a dialog box that tells you the drive is not safe, install without hesitation!
+
+Then decompress the Nvflash you download~ there are the following files:
+ 
+OK, the preparation is ready~
+
+Install APX drive
+
+
 
 http://en.miui.com/thread-78894-1-1.html
 [MIUI 6/7 ALL DEVICES SUPPORTED] Xposed / WSM tools with lot of modules! - Beta Team - Xiaomi MIUI Official Forum
@@ -16,10 +80,19 @@ Irrelevant不相关的
 Spams垃圾
 Configuration配置
 Flagship旗舰
-1.Sunlight
-2.MIUI7
-3.Adreno
-4.Mi remote
-5.Quick Charge 2.0
-6.IMX214（Sony）
-7.0.3 seconds
+Course教程
+Alacrity轻快，敏捷
+Query质疑
+Catalogue目录
+Kernel核心
+Drive驱动
+Extract提取
+Wipe
+Discontinuous
+Downgrade
+Decompress 解压
+Swipe滑动
+Factory reset – Wipe Data, Cache, and Dalvik (not including internal storage).
+Zip signature verification
+This operation may install incompatible software and render your device unusable.
+Backup and restore
