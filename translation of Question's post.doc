@@ -1,5 +1,13 @@
 [2016-01-26] Adjust the system partition & merge partitions of Mi3TD; Support the 64G version; Support the official OTA
 This Post Is Originally Made By Xuefer and QuestionYu. And All Credits Are Going To Them.
+Catalogue
+What is this?	1
+The do's and don'ts	2
+Preparation/Install Driver.	3
+Install APX driver	4
+Start	6
+Format partitions	8
+Strategy three attention	9
 
 What is this?
 This is a course that guides you adjust the system partition and merge partitions of your Mi3TD. It supports the both 16G version and 64G version! And the 64G version will be more alacrity.
@@ -33,7 +41,7 @@ Ready? Come on!
 
 The kernel of this course is provided by @Xuefer. Yes! He is the God among the Mi3TD users. This course is finished under Xuefer’s guidance.
 
-Preparation/Install Drive.
+Preparation/Install Driver.
 The toolkit you need: Miflash, Nvflash. (the latter one is the download link of Baidu netdisk).
 
 If you can’t download though the netdisk, you can doenload from this: (provided by Xuefer)
@@ -43,56 +51,109 @@ nvflash-2016-01-23.zip (20.98 MB)
 
 The Miflash is official and the download link is official too. Nvflash is provided by Xuefer who extract it from the toolkit of official MIUI ROM Fastboot file (Mi3TD is not without merging partitions, it just hides in the Fastboot file), but it solves the official bug indeed.
 
-My computer is Windows 10 Pro, and it opens the drive signature by default. But the deep flashing drive provided by NVIDIA (XiaoMi) is without signature, which causes a shitty problem: the Windows don’t allow to install.
-I don’t advise to use older versions of Windows such as Windows XP, which can’t install MTP drive automatically and the MTP drive is hard to install in Windows XP. I advise to use Windows 7 or higher systems.
+My computer is Windows 10 Pro, and it opens the driver signature by default. But the deep flashing driver provided by NVIDIA (XiaoMi) is without signature, which causes a shitty problem: the Windows don’t allow to install.
+I don’t advise to use older versions of Windows such as Windows XP, which can’t install MTP driver automatically and the MTP driver is hard to install in Windows XP. I advise to use Windows 7 or higher systems.
 
-The method to close Windows 10 drive signature is following:
+The method to close Windows 10 driver signature is following:
 
 Startup – Settings – Update & security – Recovery – Advanced startup – Restart now – Troubleshoot – Advanced options – Startup Settings – Restart – 7（Disable driver signature）
 If you can’t understand, you can find more detailed courses in Google. (Windows 7/8/8.1 pls Google by yourself~)
 
-Before you proceed, pls exit all the PC Managers entirely, such as safe software, 360 and so on. The less apps stay in background, the better. The purpose is making sure the drive can be install normally!
+Before you proceed, pls exit all the computer Managers entirely, such as safe software, 360 and so on. The less apps stay in background, the better. The purpose is making sure the driver can be install normally!
 If you don’t exit entirely, it may cause the failure later.
 
-Firstly, install Miflash~ keep default, don’t change the installation path~ If you meet a dialog box that tells you the drive is not safe, install without hesitation!
+Firstly, install Miflash~ keep default, don’t change the installation path~ If you meet a dialog box that tells you the driver is not safe, install without hesitation!
 
 Then decompress the Nvflash you download~ there are the following files:
  
 OK, the preparation is ready~
 
-Install APX drive
+Install APX driver
+In general, using this course will not lose data like system and apps, it only loses the photos, audio and so on (the files you see in your computer). But try on your own risk, whether back up or not depends you.
 
+Firstly, your Mi3 should enter the recovery mode, and you should use the third-party recovery (if you don’t have one, I strongly recommend you to use TWRP made by Xuefer. link: MI3TD 之双语 TWRP2 Recovery 双系统/双数据/并分区), connect your Mi3 to the computer, then double click 1.double click to enter the APX mode.bat, like the following picture:
+ 
+If your hint is the following instead of the above:
 
+adb server is out of date.  killing...
+ADB server didn't ACK
+* failed to start daemon *
+error: unknown host service
 
-http://en.miui.com/thread-78894-1-1.html
-[MIUI 6/7 ALL DEVICES SUPPORTED] Xposed / WSM tools with lot of modules! - Beta Team - Xiaomi MIUI Official Forum
-http://www.miui.com/thread-3417138-1-1.html
-[2016-01-26]米3TD 调整系统分区/合并分区 支持64G 支持官方OTA_小米手机3_MIUI论坛
+It tells that adb.exe has run in your computer. Enter the Task Manager and kill all the adb.exe. Then double click 1.double click to enter the APX mode.bat, the problem will be solved.
 
+Then you can find this device in your Device Manager:
+ 
+Click by the right mouse button (if you can’t find APX device, go to the end of this page), Update Driver Software, Browse my computer for driver software, Browse For Folder, and find the APX-Driver you download, OK.
+ 
+Click next, it will appear the following dialog box:
+ 
+choose install. After that, you’ll find this device in your Device Manager:
+ 
+OK~ the APX driver is installed successfully.
+Update: according to @安399042134’s feedback:
+“Some people already have driver (me too, don’t know where it from, it appears when I connect to my computer.), so there is no APX, but appears in nvidia boot recovery .”
+So if you can’t find APX device, don’t warry, some software helped you install before. Just make sure the last picture.
 
-Adjust调整
-Partition分区
-Merge合并
-sub forum分论坛
-medal勋章
-spot认出
-Irrelevant不相关的
-Spams垃圾
-Configuration配置
-Flagship旗舰
-Course教程
-Alacrity轻快，敏捷
-Query质疑
-Catalogue目录
-Kernel核心
-Drive驱动
-Extract提取
-Wipe
-Discontinuous
-Downgrade
-Decompress 解压
-Swipe滑动
-Factory reset – Wipe Data, Cache, and Dalvik (not including internal storage).
-Zip signature verification
-This operation may install incompatible software and render your device unusable.
-Backup and restore
+Start 
+Double click 2.double click to select the partition strategy.bat, here provide three strategies: (Xuefer will update the strategy, please understand by yourself. If it is hard for you to understand, download nvflash-2016-01-21.zip)
+
+1.Old MIUI strategy: double system, App and storage are split.
+2.New MIUI strategy: double system, App and storage are merged (won’t lose 1G)
+3.Single system strategy: based on the strategy 2, narrow the system 2 and expand the system 1. 
+4. Custom Configuration: adjust on your own need.
+
+Explain:
+
+1.adjust your Mi3 to the factory status.
+2.this is merging partition. Sometimes when you want to install more Apps and the internal storage is enough but it tells you there is no enough space to install. Choose this!
+3.this one is prepared for those who don’t want to use system 2 or who need more space of system partition. If you want to flash Gapps, but failed with lack of enough space in system partition. Choose this! Remember: the system 2 will be disabled.
+4.I don’t advise people to change it. If you don’t know the difference of MB & MiB and the meaning of CAC、LNX、LN1, don’t use it.
+
+No matter which one you choose，the following hint will appear:
+ 
+It is working, wait until the window close by itself. Your Mi3 will start up and hold the power button to reboot device. When the screen is dark, hold Volume+ button until device enters the recovery mode. When you first enter the recovery, it will ask you whether to keep the system partition read only, tap “don’t show it next time”and swipe the slider to allow the modification, or we can’t flash happily. Keep your device connect to the computer
+
+If you choose the strategy one, move the RAM pack to the internal storage and start flashing!
+
+If you choose the strategy two or three, in the recovery:
+Wipe – Advanced Wipe – select the Data – Repair or Change File System – Resize File System – Swipe to Resize
+
+Then reboot your device, in general, using this course will not lose data like system and apps, it only loses the photos, audio and so on. Then this course is over: )
+
+If you have never adjust the partitions before, the strategy two and three will not lose your data~
+
+If you are not so lucky, there are many exceptional situation such as can’t startup, many apps force close, and the rest space is not right (in general, the space in MIUI Stable ROM & Developer ROM displays 13.46G, and in computer & CM & MIUI Preview ROM displays 12.5G. MIUI Preview ROM adjust the unit of measurement into GiB， but still displays GB. If your are confused by these units, see Zhihu: KB / KiB，MB / MiB，GB / GiB，… 的区别是什么？ ), then 	
+
+Please see the next step to format your partitions.
+
+Format partitions
+Your device should be in recovery mode, double click 3.double click to start to format partition.bat. Make sure your input method is English. If you don’t want to be failed, copy the following code and click the right mouse button to paste. Or you are easy to type wrong.
+umount /data
+umount /cache
+umount /sdcard
+the effect is like this:
+ 
+Keep copy and paste:
+mke2fs -t ext4 /dev/block/mmcblk0p26
+ 
+	mke2fs -t ext4 /dev/block/mmcblk0p27
+ 
+reboot recovery
+
+OK, here, your device will reboot to the recovery and you can flash happily: )
+Move the RAM pack to the internal storage and start flashing!
+
+Attention! If you choose the strategy three, your strategy is expanding the system one. You may find you still can’t flash the Gapps or you find your system partition size is very small (it often happens in flashing 5.0+), you need one more step~ See the next~
+
+Strategy three attention
+In general, after you flash the RAM peck, try to flash Gapps peck will failed and tell you there are no enough space~ But it’s not really, the partition information has not “update”, then how to update?
+
+After you flash the RAM peck, don’t hurry to flash other pecks, go back to the recovery main interface and take the following steps:
+
+Wipe – Advanced Wipe – select the system – Repair or Change File System – Resize File System – Swipe to Resize.
+
+Then the system partition information is updated and you can flash the Gapps peck. If you still failed, reboot the recovery and do it again.
+
+What’s more, the strategy three is very special and you can’t use the MIUI’s official system update app to update your system, it will cost unknowing serious consequence. If you want to update, download the OTA peck or full RAM peck and flash them in the TWRP (recovery).
+
